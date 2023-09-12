@@ -33,7 +33,7 @@ aplicaciones para el tratamiento de información.
 3. Tecnologías para el desarrollo de aplicaciones web.
 4. Planificación de aplicaciones web.
 #### Presentaciones
-* [Introducción al curso](Presentaciones/ProgWeb.pdf)
+* [Introducción al curso](Presentaciones/Presentacion.pdf)
 * [Introducción a las aplicaciones web](Presentaciones/IntroWebApps.pdf)
 * [Ansible](Presentaciones/ProgWeb-Ansible.pdf)
 
