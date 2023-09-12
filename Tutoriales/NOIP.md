@@ -68,7 +68,47 @@ al directorio de systemd.
 sudo cp debian/service /etc/systemd/system/noip-duc.service
 ``` 
 
-Crea 
+Utilizando `sudo`, crea un archivo de configuración en esta ruta: `/etc/default/noip-duc`
+
+``` 
+nvim /etc/default/noip-duc
+``` 
+
+El archivo debe incluir los datos necesarios para la conexión con NO-IP:
+
+``` 
+## File: /etc/default/noip-duc
+NOIP_USERNAME=
+NOIP_PASSWORD=
+NOIP_HOSTNAMES=
+``` 
+
+Por ejemplo:
+
+``` 
+## File: /etc/default/noip-duc
+NOIP_USERNAME=myusername
+NOIP_PASSWORD=mypassword
+NOIP_HOSTNAMES=example.ddns.net,exampledomain.com,noiptest.redirectme.net
+``` 
+
+Reiniciamos `systemd`:
+``` 
+sudo systemctl daemon-reload
+``` 
+Habilitamos el servicio:
+``` 
+sudo systemctl enable noip-duc
+``` 
+Por último iniciamos el programa:
+``` 
+sudo systemctl start noip-duc
+``` 
+Para ver el estatus lo hacemos como para cualquier otro sercicio:
+``` 
+sudo systemctl status noip-duc
+``` 
+Reinicia tu instancia y prueba conectarte con tu dominio.
 
 # Otras fuentes 
 [Set up dynamic DNS on your Amazon Linux instance](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dynamic-dns.html)
