@@ -1,4 +1,4 @@
-### Nombres y direcciones IP en AWS-EC2 
+## Nombres y direcciones IP en AWS-EC2 
 
 Cuando lanzamos una nueva instancia de EC2 se le asigna automáticamente una
 dirección IP pública y un nombre DNS (Domain Name System). Podemos utilizar el
@@ -11,7 +11,7 @@ En nuestro caso, debemos apagar y reiniciar constantemente nuestros servidores p
 ahorrar recursos. Tenemos que estar vistando el Dashboard de EC2 para ver cual es 
 la nueva dirección IP para conectarnos al server por medio de una sesión SSH. 
 
-### DNS Dínamicos
+## DNS Dinámicos
 
 Los servicios de DNS dinámicos nos permiten configurar de manera gratuita 
 nombres de host utilizando alguno de sus subdominios. Por ejemplo:`miserver.ddns.me`.
@@ -28,8 +28,47 @@ Existen varias opciones de servicios de DNS dinámicos, entre ellas podemos resa
 
 * [NO-IP](https://www.noip.com/) Esta es una de las opciones más populares y ofrece 
 otros servicios profesionales. 
+* [DuckDNS](https://duckdns.org) Servicio minimalista que ofrece justo la funcionalidad 
+que necesitatmos. 
+* [Cloudflare]() Servicio de alto desempeño con una capa gratuita. Múltiples servicios de 
+gran calidad.
+* [afraid.org](https://freedns.afraid.org/) Otro servicio básico.
 
+En este caso utilizaremos el servicio de NO-IP. Una razón importante para elegir este 
+servicio es la posibilidad de instalar el cliente de actualización como un servicio 
+de la instancia. Esto nos permite ver fácilmente su estatus y nos aseguramos de que 
+inicie al momento de lanzar la instancia.
 
+Como primer paso debes de crear una cuenta en el sitio [NO-IP](https://www.noip.com/)
+y después agrega un subdominio de tu elección. Ahora solo debemos instalar el cliente y
+asignarlo como un servicio de arranque en nuestra instancia. 
+
+Inicia sesión a tu instancia utilizando el IP asignado. Después de estos 
+pasos lo haremos utilizando nuestro nombre de host asignado. 
+
+Vamos a descargar el programa comprimido: 
+```
+wget https://dmej8g5cpdyqd.cloudfront.net/downloads/noip-duc_3.0.0-beta.7.tar.gz
+```
+Extraemos el contenido
+```
+tar xf noip-duc_3.0.0-beta.7.tar.gz
+```
+Instalamos el programa 
+```
+cd /home/$USER/noip-duc_3.0.0-beta.7/binaries && sudo apt install ./noip-duc_3.0.0-beta.7_amd64.deb
+```
+
+Ya instaldo el DUC (No-IP Dynamic Update Client) lo vamos a configurar 
+para que funcione con [systemd](https://es.wikipedia.org/wiki/Systemd). 
+Desde el directorio `noip-duc_3.0.0-beta.7` copiamos el folder `debian\server` 
+al directorio de systemd.
+
+``` 
+sudo cp debian/service /etc/systemd/system/noip-duc.service
+``` 
+
+Crea 
 
 # Otras fuentes 
 [Set up dynamic DNS on your Amazon Linux instance](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dynamic-dns.html)
