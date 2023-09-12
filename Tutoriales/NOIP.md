@@ -39,6 +39,7 @@ servicio es la posibilidad de instalar el cliente de actualización como un serv
 de la instancia. Esto nos permite ver fácilmente su estatus y nos aseguramos de que 
 inicie al momento de lanzar la instancia.
 
+## NOIP en Ubuntu 22.04 
 Como primer paso debes de crear una cuenta en el sitio [NO-IP](https://www.noip.com/)
 y después agrega un subdominio de tu elección. Ahora solo debemos instalar el cliente y
 asignarlo como un servicio de arranque en nuestra instancia. 
@@ -82,7 +83,6 @@ NOIP_USERNAME=
 NOIP_PASSWORD=
 NOIP_HOSTNAMES=
 ``` 
-
 Por ejemplo:
 
 ``` 
@@ -110,7 +110,15 @@ sudo systemctl status noip-duc
 ``` 
 Reinicia tu instancia y prueba conectarte con tu dominio.
 
-# Otras fuentes 
-[Set up dynamic DNS on your Amazon Linux instance](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dynamic-dns.html)
-[How to Install the Linux 3.x Dynamic Update Client (DUC)](https://www.noip.com/support/knowledgebase/install-linux-3-x-dynamic-update-client-duc#install_from_source)  
-[Running the Linux DUC v3.0 at startup](https://www.noip.com/support/knowledgebase/running-linux-duc-v3-0-startup-2)
+
+### Reto
+Crea un script de Ansible para instalar el DUC.
+Los parametros del archivo se deben especificar utilizando variables desde 
+un archivo sin control de versiones. Puedes utilizar el concepto de plantillas 
+para crear el archivo de configuración.
+
+
+### Otras fuentes 
+* [Set up dynamic DNS on your Amazon Linux instance](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dynamic-dns.html)
+* [How to Install the Linux 3.x Dynamic Update Client (DUC)](https://www.noip.com/support/knowledgebase/install-linux-3-x-dynamic-update-client-duc#install_from_source)  
+* [Running the Linux DUC v3.0 at startup](https://www.noip.com/support/knowledgebase/running-linux-duc-v3-0-startup-2)
