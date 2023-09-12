@@ -109,7 +109,8 @@ Para ver el estatus lo hacemos como para cualquier otro sercicio:
 sudo systemctl status noip-duc
 ``` 
 Reinicia tu instancia y prueba conectarte con tu dominio.
-
+Para que revises si el IP está sido asignado correctamente puedes utilizar un 
+servicio como el de (https://mxtoolbox.com/DNSLookup.aspx).
 
 ### Reto
 Crea un script de Ansible para instalar el DUC.
