@@ -28,3 +28,47 @@ estándares de calidad y productividad.
 
 * Crea y aplica esquemas de bases de datos para garantizar la confiabilidad de los datos en
 aplicaciones para el tratamiento de información.
+
+### Unidad 1: Introducción a las aplicaciones web
+1. Evolución de las aplicaciones web.
+2. Arquitectura de las aplicaciones web.
+3. Tecnologías para el desarrollo de aplicaciones web.
+4. Planificación de aplicaciones web.
+
+
+### Unidad 2: HTML y XML 
+1. Introducción.
+2. Estructura global de un documento Web.
+3. Elementos básicos: texto, vínculos, listas, tablas, objetos, imágenes y aplicaciones.
+4. Formularios
+
+### Unidad 3: Programación del lado del servidor
+1. Introducción al lenguaje. *Python, Django*
+2. Estructuras de Control. *Django URLs, Views* 
+3. Tratamiento de Formularios. *Python, Django*
+4. Manejo de objetos del servidor. *Python, Django Views*
+5. Creación de clases. *Django Models*
+6. Acceso a datos. *Django ORM, Redis*
+
+### Unidad 4: Programación del lado del cliente
+1. Introducción al lenguaje. (JavaScript)
+2. Manejo de Frameworks. (htmx, React) 
+3. Estructuras de Control. (htmx, React)
+4. Manipulación de objetos.(htmx, React)
+5. Lenguajes de presentación en documentos Web. (CSS, Tailwindcss)
+6. Selectores.(CSS, Tailwindcss)
+7. Modelo de caja.(CSS, Tailwindcss)
+
+### Unidad 5: Cómputo en la nube y servicios
+1. Conceptos generales. (AWS, Ansible)
+2. Tipos de Servicios en la nube.
+3. Patrones de diseño.
+4. Estándares en servicios.
+5. Plataformas tecnológicas. (AWS, Ansible)
+6. Seguridad e interoperabilidad. (AWS, Ansible)
+
+### Proyectos
+
+1. [GoodReads](https://github.com/mariosky/GoodReads)
+
+
