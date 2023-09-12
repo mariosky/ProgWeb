@@ -1,4 +1,4 @@
-# ProgWeb
+# Progamación Web
 Curso de programación web, Tecnológico Nacional de México Campus Tijuana
 
 ### Presentación
@@ -29,6 +29,7 @@ estándares de calidad y productividad.
 * Crea y aplica esquemas de bases de datos para garantizar la confiabilidad de los datos en
 aplicaciones para el tratamiento de información.
 
+# Temario
 ### Unidad 1: Introducción a las aplicaciones web
 1. Evolución de las aplicaciones web.
 2. Arquitectura de las aplicaciones web.
