@@ -33,6 +33,8 @@ aplicaciones para el tratamiento de información.
 3. Tecnologías para el desarrollo de aplicaciones web.
 4. Planificación de aplicaciones web.
 #### Presentaciones
+* [Introducción al curso](Presentaciones/ProgWeb.pdf)
+* [Introducción a las aplicaciones web](Presentaciones/IntroWebApps.pdf)
 * [Ansible](Presentaciones/ProgWeb-Ansible.pdf)
 
 ### Unidad 2: HTML y XML 
@@ -40,6 +42,8 @@ aplicaciones para el tratamiento de información.
 2. Estructura global de un documento Web.
 3. Elementos básicos: texto, vínculos, listas, tablas, objetos, imágenes y aplicaciones.
 4. Formularios
+#### Presentaciones
+* [HTML](Presentaciones/HTML.pdf)
 
 ### Unidad 3: Programación del lado del servidor
 1. Introducción al lenguaje. *Python, Django*
@@ -48,6 +52,8 @@ aplicaciones para el tratamiento de información.
 4. Manejo de objetos del servidor. *Python, Django Views*
 5. Creación de clases. *Django Models*
 6. Acceso a datos. *Django ORM, Redis*
+#### Presentaciones
+* [Introducción a Python](Presentaciones/PythonIntro.pdf)
 
 ### Unidad 4: Programación del lado del cliente
 1. Introducción al lenguaje. (JavaScript)
