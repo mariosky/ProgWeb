@@ -28,10 +28,10 @@ Existen varias opciones de servicios de DNS dinámicos, entre ellas podemos resa
 
 * [NO-IP](https://www.noip.com/) Esta es una de las opciones más populares y ofrece 
 otros servicios profesionales. 
-* [DuckDNS](https://duckdns.org) Servicio minimalista que ofrece justo la funcionalidad 
+* [DuckDNS](https://www.duckdns.org/) Servicio minimalista que ofrece justo la funcionalidad 
 que necesitatmos. 
-* [Cloudflare]() Servicio de alto desempeño con una capa gratuita. Múltiples servicios de 
-gran calidad.
+* [Cloudflare](https://developers.cloudflare.com/dns/) Servicio de alto 
+desempeño con una capa gratuita. Múltiples servicios de gran calidad.
 * [afraid.org](https://freedns.afraid.org/) Otro servicio básico.
 
 En este caso utilizaremos el servicio de NO-IP. Una razón importante para elegir este 
