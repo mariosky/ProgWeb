@@ -110,7 +110,7 @@ Por último iniciamos el programa:
 sudo systemctl start noip-duc
 ```
 
-Para ver el estatus lo hacemos como para cualquier otro sercicio:
+Para ver el estatus lo hacemos como para cualquier otro servicio:
 
 ``` 
 sudo systemctl status noip-duc
