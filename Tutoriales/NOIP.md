@@ -63,17 +63,17 @@ cd /home/$USER/noip-duc_3.0.0-beta.7/binaries && sudo apt install ./noip-duc_3.0
 Ya instaldo el DUC (No-IP Dynamic Update Client) lo vamos a configurar 
 para que funcione con [systemd](https://es.wikipedia.org/wiki/Systemd). 
 Desde el directorio `noip-duc_3.0.0-beta.7` copiamos el folder `debian\server` 
-al directorio de systemd.
+al directorio de systemd
 
 ``` 
 sudo cp debian/service /etc/systemd/system/noip-duc.service
-``` 
+```
 
 Utilizando `sudo`, crea un archivo de configuración en esta ruta: `/etc/default/noip-duc`
 
 ``` 
-nvim /etc/default/noip-duc
-``` 
+sudo nvim /etc/default/noip-duc
+```
 
 El archivo debe incluir los datos necesarios para la conexión con NO-IP:
 
@@ -82,7 +82,8 @@ El archivo debe incluir los datos necesarios para la conexión con NO-IP:
 NOIP_USERNAME=
 NOIP_PASSWORD=
 NOIP_HOSTNAMES=
-``` 
+```
+
 Por ejemplo:
 
 ``` 
@@ -90,24 +91,31 @@ Por ejemplo:
 NOIP_USERNAME=myusername
 NOIP_PASSWORD=mypassword
 NOIP_HOSTNAMES=example.ddns.net,exampledomain.com,noiptest.redirectme.net
-``` 
+```
 
 Reiniciamos `systemd`:
+
 ``` 
 sudo systemctl daemon-reload
-``` 
+```
+
 Habilitamos el servicio:
+
 ``` 
 sudo systemctl enable noip-duc
-``` 
-Por último iniciamos el programa:
+```
+Por último iniciamos el programa: 
+
 ``` 
 sudo systemctl start noip-duc
-``` 
+```
+
 Para ver el estatus lo hacemos como para cualquier otro sercicio:
+
 ``` 
 sudo systemctl status noip-duc
-``` 
+```
+
 Reinicia tu instancia y prueba conectarte con tu dominio.
 Para que revises si el IP está sido asignado correctamente puedes utilizar un 
 servicio como el de (https://mxtoolbox.com/DNSLookup.aspx).
