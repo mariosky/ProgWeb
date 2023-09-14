@@ -14,8 +14,8 @@ del directorio `home` de nuestro usuario. Listemos su contenido:
 ls -al ~/.ssh 
 ```
 
-> **Nota**
-El comando ls lista los archivos del directorio miestras que el 
+> **Nota:**
+El comando `ls` lista los archivos del directorio miestras que el 
 parámetro `-al` muestra todos los objetos en formato largo. Recuerda 
 que el símbolo `~` es un alias de nuestro directorio `home`. 
 
