@@ -180,5 +180,6 @@ con paréntesis. Algo importante es que el método sigue asociado al objeto `"ho
 por lo que despliega `'HOLA'`. 
 
 Por último, podemos llamar a un método enviando los parámetros en un 
-diccionario. 
+diccionario. Para esto enviamos los parametros anteponiendo `**`. 
+
 
