@@ -76,6 +76,18 @@ aplicaciones para el tratamiento de información.
 
 ### Proyectos
 
+La entrega del proyecto debe hacerse compartiendo un repositorio
+de GitHub público con los archivos de configuración del CodeSpace 
+para que se incluyan el software y librerías necesarias para la 
+ejecución del proyecto. 
+
+Si se especifica en la descripción del proyecto también será 
+necesario contar con una instancia en AWS con la configuración del
+proyecto automatizada con ansible.
+
+Además se debe incluir el link a un video de máximo cinco minutos
+dónde se explique el código, funcionamiento y desiciones de diseño.
+
 1. [GoodReads](https://github.com/mariosky/GoodReads)
 
 
