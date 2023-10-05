@@ -38,3 +38,4 @@ Para desactivarlo simplemente ejecutamos el comando `deactivate`. Dependiendo de
 Una vez activado el ambiente vamos a instalar django utilizando pip:
 
 
+
