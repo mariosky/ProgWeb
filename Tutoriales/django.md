@@ -252,6 +252,11 @@ INSTALLED_APPS = [ 'movies.apps.MoviesConfig',
 ] 
 ```
 
+Para cargar algunas peliculas de ejemplo haremos un [comando de administración](https://docs.djangoproject.com/en/4.2/howto/custom-management-commands/)
+Otra opción es crear una migración.
+
+Dentro del directorio de movies crea un directorio `management\commands` y el script `load_movies.py`:
+
 
 
 
