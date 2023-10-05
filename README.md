@@ -93,4 +93,4 @@ dónde se explique el código, funcionamiento y desiciones de diseño.
    
 ### Recursos
 
-1. [AWS Academy]((https://awsacademy.instructure.com/)https://awsacademy.instructure.com/)
+1. [AWS Academy](https://awsacademy.instructure.com/)
