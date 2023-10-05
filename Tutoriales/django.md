@@ -65,7 +65,7 @@ En otro momento, podemos instalar las librerías de esta manera:
 pip install -r requirements.txt
 ```
 
-## Cómo crear un projecto y agregar una aplicación
+## Cómo crear un projecto 
 Para crear un proyecto desde cero (en este caso llamado **mymovies**)
 ejecutamos el siguiente comando:
 ```
@@ -130,6 +130,59 @@ Al intentar conectarnos por `https` se interrumpe la conexión pues no es posibl
 ```
 
 Recuerda conectarte (por el momento)  por `http` únicamente.
+
+Si todo sale bien debemos de ver la página siguiente:
+
+![exito](exito.png)
+
+## Vamos agregando una nueva aplicación
+
+En django, un proyecto web consiste en una estructura de archivos de configuración (la cual acabamos de crear) y una o varias
+aplicaciones que implementan cierta funcionalidad. Esto nos permite reutilizar una aplicación (su funcionalidad) en varios 
+proyectos. Para crear nuestra aplicación (en este caso llamada *movies*) ejecutamos el siguiente comando:
+
+```
+(django-venv) ubuntu@ip-172-31-57-104:~/mymovies$ python3 manage.py startapp movies
+```
+
+Veamos la estructura
+
+```
+(django-venv) ubuntu@ip-172-31-57-104:~/mymovies$ tree .
+.
+├── db.sqlite3
+├── manage.py
+├── movies
+│   ├── __init__.py
+│   ├── admin.py
+│   ├── apps.py
+│   ├── migrations
+│   │   └── __init__.py
+│   ├── models.py
+│   ├── tests.py
+│   └── views.py
+└── mymovies
+    ├── __init__.py
+    ├── __pycache__
+    │   ├── __init__.cpython-310.pyc
+    │   ├── settings.cpython-310.pyc
+    │   ├── urls.cpython-310.pyc
+    │   └── wsgi.cpython-310.pyc
+    ├── asgi.py
+    ├── settings.py
+    ├── urls.py
+    └── wsgi.py
+
+4 directories, 18 files
+```
+
+Vemos que el directorio `movies` incluye archivos donde vamos a agregar la funcionalidad de nuestro sitio.
+Es importante agregar a `.gitignore` también los archivos compilados de Python `*.pyc`
+
+## ORM de Django
+
+Vamos a iniciar nuestro proyecto definiendo el esquema de la base de datos relacional para nuestra aplicación.
+Para esto debemos editar el archivo models.py:
 
 
 
