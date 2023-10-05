@@ -89,5 +89,8 @@ Además se debe incluir el link a un video de máximo cinco minutos
 dónde se explique el código, funcionamiento y desiciones de diseño.
 
 1. [GoodReads](https://github.com/mariosky/GoodReads)
+1. [MyMovies](https://github.com/mariosky/MyMovies)
+   
+### Recursos
 
-
+1. [AWS Academy]((https://awsacademy.instructure.com/)https://awsacademy.instructure.com/)
