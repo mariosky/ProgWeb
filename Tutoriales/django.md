@@ -1,4 +1,6 @@
-## Primeros pasos con django
+# Primeros pasos con django
+
+## Instalación
 
 *Se asume que estamos en una instancia de ubuntu 24.04*
 
@@ -36,6 +38,34 @@ Para desactivarlo simplemente ejecutamos el comando `deactivate`. Dependiendo de
 ```
 
 Una vez activado el ambiente vamos a instalar django utilizando pip:
+```
+pip install django
+```
+
+Podemos ver que liberías están instaladas en el ambiente con el comando freeze:
+```
+pip freeze
+
+asgiref==3.7.2
+Django==4.2.6 
+sqlparse==0.4.4
+typing_extensions==4.8.0
+```
+
+Revisa que esté instalada la librería de Django.
+Para volver a instalar las librerías que tenemos hasta ahora podemos almacenar la
+salida del comando `freeze` en un archivo llamado `requeriments.txt`:
+```
+pip freeze > requirements.txt
+```
+En otro momento, podemos instalar las librerías de esta manera:
+
+**No es necesario hacerlo en este momento** 
+```
+pip install -r requirements.txt
+```
+
+## Cómo crear un projecto y agregar una aplicación
 
 
 
