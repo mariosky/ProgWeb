@@ -91,7 +91,7 @@ Como vamos a estar probando a nuestro proyecto de manera remota utilizando
 una IP pública, necesitamos agregar esta IP (o host) al parámetro de configuración `ALLOW_HOSTS` 
 en `settings.py`:
 
-```
+```python
 ALLOWED_HOSTS = ['otro.host.com', 'web.ddns.net']
 ```
 
@@ -183,6 +183,16 @@ Es importante agregar a `.gitignore` también los archivos compilados de Python 
 
 Vamos a iniciar nuestro proyecto definiendo el esquema de la base de datos relacional para nuestra aplicación.
 Para esto debemos editar el archivo models.py:
+
+Una vez que hemos agregado algunas clases `models.py` podemos agregar nuestra app 
+al proyecto. Esto lo hacemos en el archivo `settings.py`
+
+```python
+INSTALLED_APPS = [ 'movies.apps.MoviesConfig', 
+    'django.contrib.admin',
+] 
+```
+
 
 
 
