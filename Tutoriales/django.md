@@ -45,7 +45,7 @@ pip install django
 Podemos ver que liberías están instaladas en el ambiente con el comando freeze:
 ```
 pip freeze
-
+(salida)
 asgiref==3.7.2
 Django==4.2.6 
 sqlparse==0.4.4
@@ -66,6 +66,54 @@ pip install -r requirements.txt
 ```
 
 ## Cómo crear un projecto y agregar una aplicación
+Para crear un proyecto desde cero (en este caso llamado **mymovies**)
+ejecutamos el siguiente comando:
+```
+django-admin startproject mymovies
+```
+
+Para ver la estructura del directorio que acabamos de crear podemos ejecutar el
+comando `tree` (debemos primero instalarlo con `sudo apt install tree`) 
+```
+tree mymovies
+(salida)
+mymovies/
+├── manage.py
+└── mymovies
+    ├── __init__.py
+    ├── asgi.py
+    ├── settings.py
+    ├── urls.py
+    └── wsgi.py
+```
+
+Una vez creado el proyecto podemos probar la instalación ejecutando el 
+servidor web de desarrollo incluido en django. En este caso especificamos 
+el parámetro `0.0.0.0:8000` para poder acceder al servidor desde internet en el 
+puerto `8000`:
+
+```
+(django-venv) ubuntu@ip-172-31-57-104:~/mymovies$ python3 manage.py runserver 0.0.0.0:8000
+```
+
+Salida:
+
+```
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+
+You have 18 unapplied migration(s). Your project may not work properly until you apply the migrations for app(s): admin, auth, contenttypes, sessions.
+Run 'python manage.py migrate' to apply them.
+October 05, 2023 - 16:08:33
+Django version 4.2.6, using settings 'mymovies.settings'
+Starting development server at http://0.0.0.0:8000/
+Quit the server with CONTROL-C.
+```
+
+Prueba acceder desde tu navegador. Recuerda que debes tener abierto al tráfico el puerto `8000` en tu grupo de seguridad o firewall.
+
 
 
 
