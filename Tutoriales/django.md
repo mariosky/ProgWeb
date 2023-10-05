@@ -87,6 +87,14 @@ mymovies/
     └── wsgi.py
 ```
 
+Como vamos a estar probando a nuestro proyecto de manera remota utilizando 
+una IP pública, necesitamos agregar esta IP (o host) al parámetro de configuración `ALLOW_HOSTS` 
+en `settings.py`:
+
+```
+ALLOWED_HOSTS = ['otro.host.com', 'web.ddns.net']
+```
+
 Una vez creado el proyecto podemos probar la instalación ejecutando el 
 servidor web de desarrollo incluido en django. En este caso especificamos 
 el parámetro `0.0.0.0:8000` para poder acceder al servidor desde internet en el 
@@ -114,6 +122,14 @@ Quit the server with CONTROL-C.
 
 Prueba acceder desde tu navegador. Recuerda que debes tener abierto al tráfico el puerto `8000` en tu grupo de seguridad o firewall.
 
+Al intentar conectarnos por `https` se interrumpe la conexión pues no es posible conectarnos por https en este momento.
+
+```
+[05/Oct/2023 16:17:00] code 400, message Bad HTTP/0.9 request type ('\x16\x03\x01\x02\x92\x01\x00\x02\x8e\x03\x03/º\x10=N')
+[05/Oct/2023 16:17:00] You're accessing the development server over HTTPS, but it only supports HTTP.
+```
+
+Recuerda conectarte (por el momento)  por `http` únicamente.
 
 
 
