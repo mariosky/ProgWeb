@@ -16,6 +16,15 @@ Pasos para habilitar el sitio de admin:
 atributo de `is_staff`, para esto debemos crear un usuario administrador 
 con el comando `createsuperuser`. 
 
+```bash
+ubuntu@ip-172-31-57-104:~/mymovies$ python3 manage.py createsuperuser
+Username (leave blank to use 'ubuntu'): mariosky
+Email address: mariosky@gmail.com
+Password:
+Password (again):
+Superuser created successfully.
+```
+
 2. Debemos indicar que modelos vamos a gestionar desde la interfaz del admin y
 de manera opcional configurar la interfaz para cubrir con las necesidades particulares
 de nuestra aplicación.
@@ -24,6 +33,19 @@ La configuración del admin se realiza editando el archivo `admin.py` dentro de 
 aplicación.
 
 Vamos editando el archivo  para incluir en el admin todos nuestros modelos:
+
+```python
+from django.contrib import admin
+
+from movies.models import Movie, Genre, Job, Person, MovieCredit, MovieReview 
+
+admin.site.register(Movie)
+admin.site.register(Genre)
+admin.site.register(Job)
+admin.site.register(Person)
+admin.site.register(MovieCredit)
+admin.site.register(MovieReview)
+```
 
 
 
