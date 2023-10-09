@@ -46,6 +46,29 @@ Podemos asignar al usuario `ubuntu` el rol de administrador.
 ALTER USER ubuntu WITH SUPERUSER;
 ```
 
+## Instalación de librerías
 
+Requerimos de dos librerías para configurar PosgreSQL con Django.
+La biblioteca [psycopg2](https://www.psycopg.org/docs/) nos permite conectarnos al servidor de PosgreSQL de manera eficiente y segura.
+Por otro lado [django-environ](https://github.com/joke2k/django-environ) nos va a permitir configurar los servicios que requieren variables de entorno, 
+ya sea porque son secretas o dependen del contexto. 
+
+Activa el ambiente y ejecuta la instalación:
+
+```bash
+pip install psycopg2
+pip install django-environ
+```
+En caso de que tengas problemas por dependencias al instalar `psycopg2` intenta instalar la 
+versión: `psycopg2-binary`.
+
+Ejemplo de uso:
+```python
+conn = psycopg2.connect("dbname=django_bootstrap user=ubuntu password=thisissomeseucrepassword")
+cur = conn.cursor()
+cur.execute("SELECT CURRENT_DATE")
+records = cur.fetchall()
+print(records)
+```
 
 
