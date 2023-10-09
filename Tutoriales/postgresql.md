@@ -33,6 +33,11 @@ de los comandos de SQL, también hay comando propios de `psql`:
 | \du    | muestra a los usuarios   |
 | \c     | conectarse a otra BD     |
 | \q     | salimos de psql          |
+| \dt   | lista las tablas          | 
+| \d+ objeto | información detallada del objeto | 
+|\pset format wrapped | mejora el despligue de las tablas al envolver las columnas |
+|\e  | abre un editor para las consultas | 
+
 
 Para conectarnos con el usuario administrador de PosgreSQL nos cambiamos de usuario a `postgres`.
 
@@ -70,5 +75,32 @@ cur.execute("SELECT CURRENT_DATE")
 records = cur.fetchall()
 print(records)
 ```
+## Configuración de Django
+
+Modifica la configuración del parámetro `DATABASES` en el archivo `settings.py` del proyecto, según la [documentación](https://docs.djangoproject.com/en/4.2/ref/settings/#databases).
+En nuestro caso:
+
+```python
+DATABASES = {
+    "default": {
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": "django_bootstrap",
+        "USER": "ubuntu",
+        "PASSWORD": "thisissomeseucrepassword",
+        "HOST": "127.0.0.1",
+        "PORT": "5432",
+    }
+}
+```
+
+Ahora simplemente ejecutamos `migrate`.
+
+Revisa que efectivamente las tablas se crearon en la base de datos.
+
+
+
+
+
+
 
 
