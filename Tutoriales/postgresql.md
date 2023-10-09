@@ -97,6 +97,13 @@ Ahora simplemente ejecutamos `migrate`.
 
 Revisa que efectivamente las tablas se crearon en la base de datos.
 
+## Tarea
+
+Utilizando `django-environ` protege tu archivo de `settings.py` para
+que utilice variables de entorno para guardar el password de la base de datos.
+Cuando el sitio esté en producción es probable que tengas que guardar como secreto
+toda la configuración de `DATABASES`.
+
 
 
 
