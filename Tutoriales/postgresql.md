@@ -55,7 +55,7 @@ ALTER USER ubuntu WITH SUPERUSER;
 
 Requerimos de dos librerías para configurar PosgreSQL con Django.
 La biblioteca [psycopg2](https://www.psycopg.org/docs/) nos permite conectarnos al servidor de PosgreSQL de manera eficiente y segura.
-Por otro lado [django-environ](https://github.com/joke2k/django-environ) nos va a permitir configurar los servicios que requieren variables de entorno, 
+Por otro lado [django-environ](https://django-environ.readthedocs.io/en/latest/quickstart.html) nos va a permitir configurar los servicios que requieren variables de entorno, 
 ya sea porque son secretas o dependen del contexto. 
 
 Activa el ambiente y ejecuta la instalación:
