@@ -1,0 +1,100 @@
+* {
+    box-sizing: border-box; /* el width y height total incluye al padding y el border */
+}
+
+h1,
+h2 
+{
+    /* font-weight: bold; */
+     font-weight: 400; 
+    /* font-weight: 900; */
+}
+
+
+body {
+    padding: 1rem 0.5rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    max-width: 56rem;
+    margin: 0 auto;
+    min-height: 100vh;
+    color: #333;
+    font-family:  ui-sans-serif, system-ui, -apple-system,
+     BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", 
+     Arial, "Noto Sans", sans-serif, "Apple Color Emoji", 
+     "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+.page-header {
+    text-align: center;
+    border-bottom: 1px solid #333;
+    margin-bottom: 2rem;
+}
+.page-header > h1 {
+    margin-bottom: 0;
+    margin-top: 0;
+}
+.movie-title {
+    font-size: 2rem;
+    font-weight: bolder; 
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+.movie-info {
+    display: flex;
+}
+
+.movie-info  p  {
+    margin-top: 5px;
+}
+.movie-genre {
+    margin-top: 5px;
+    display: flex; /* Se recorren los elementos como si fueran texto */ 
+    padding-left: 0.5rem;
+}
+
+.movie-genre  li {
+    list-style-type: none; /* Sin bullets */
+    margin-right: 0.5rem; 
+}
+
+.top-movie 
+{
+    display: flex; /* Se recorren los elementos como si fueran texto */ 
+}
+
+.poster
+{
+    width: 300px;
+    height: 450px;
+    margin-right: 40px;
+}
+
+.cast 
+{
+    display: flex; /* Se recorren los elementos como si fueran texto */ 
+}
+
+.cast-item 
+{
+    margin: 5px;
+    width: 140px ;
+    height: 275px;
+    font-weight: bold;
+}
+
+
+.cast-item > h1
+{
+    margin-top: 0;
+    font-size: medium;
+    font-weight: bold;
+}
+
+footer
+{
+    border-top: 1px solid #333;
+    height: 175px;
+}
+
