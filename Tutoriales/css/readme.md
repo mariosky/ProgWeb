@@ -139,4 +139,20 @@ Agrega las directivas de Taiwind en `input.css`:
 
 Como tarea, modifica el ejemplo para que utilice Tailwindcss.
 
+Para ver el ejemplo ejecuta el servidor básico de python en el
+directorio `css`:
+
+```bash
+python3 -m http.server --bind 0.0.0.0 8080
+```
+
+Visita la página `basic.html` en el servidor , por ejemplo:
+
+```
+http://ittweb.ddns.net:8080/basic.html
+```
+
+Revisa el archivo `css/style.css`
+
+
 
