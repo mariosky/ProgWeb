@@ -80,6 +80,23 @@ componente en cuestión. Esto evita el caso de hacer un cambio en el archvio
 `.css` que modifica los componentes en todas las páginas lo cual hace difícil
 detectar algún problema ocasionado por el cambio.
 
+## Instalación de Tailwind CLI 
 
+Hay varias maneras de trabajar con tailwindcss, en este caso vamos a instalar el 
+ejecutable CLI (interfaz de línea de comando) de tailwind. Sigue las [instrucciones](https://tailwindcss.com/blog/standalone-cli): 
 
-
+1. El primer paso es descargar el [ejecutable](https://github.com/tailwindlabs/tailwindcss/releases/tag/v3.3.3) para tu sistema.
+   Para el caso de Ubuntu 22.04:
+```bash 
+   wget https://github.com/tailwindlabs/tailwindcss/releases/download/v3.3.3/tailwindcss-linux-x64
+``` 
+2. Renombramos el archivo a tailwindcss:
+```bash 
+   mv tailwindcss-linux-x64 tailwindcss
+``` 
+3. Le damos derechos de ejecución:
+```bash 
+   sudo chmod +x tailwindcss
+``` 
+4. Nos aseguramos que el programa esté en el `PATH` de nuestro sistema. También puedes copiar el ejecutable 
+   a la raíz de tu proyecto, solo asegurate que está en el archivo `.gitignore`. 
