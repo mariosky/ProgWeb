@@ -100,3 +100,43 @@ ejecutable CLI (interfaz de línea de comando) de tailwind. Sigue las [instrucci
 ``` 
 4. Nos aseguramos que el programa esté en el `PATH` de nuestro sistema. También puedes copiar el ejecutable 
    a la raíz de tu proyecto, solo asegurate que está en el archivo `.gitignore`. 
+
+Una vez instalado, en la raíz del proyecto:
+
+```bash 
+# Creamos un archivo de configuración tailwind.config.js 
+./tailwindcss init
+
+# Una vez configurado podemos ejecutar el ejecutable en modo watcher
+./tailwindcss -i input.css -o output.css --watch
+
+# Para compactar el css para producción 
+./tailwindcss -i input.css -o output.css --minify
+```
+
+Configura las rutas del proyecto en el archivo `tailwind.config.js`:
+
+```js 
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: ["./src/**/*.{html,js}"],
+  theme: {
+    extend: {},
+  },
+  plugins: [
+    require('@tailwindcss/forms'),
+    require('@tailwindcss/typography'),
+  ],
+}
+```
+
+Agrega las directivas de Taiwind en `input.css`: 
+```css 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+```
+
+Como tarea, modifica el ejemplo para que utilice Tailwindcss.
+
+
