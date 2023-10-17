@@ -54,6 +54,7 @@ aplicaciones para el tratamiento de información.
 4. Manejo de objetos del servidor. *Python, Django Views*
 5. Creación de clases. *Django Models*
 6. Acceso a datos. *Django ORM, Redis*
+7. Autentificación
 #### Presentaciones
 * [Introducción a Python](Presentaciones/PythonIntro.pdf)
 
