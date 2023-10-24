@@ -27,7 +27,7 @@ python3 -m venv django-venv
 Una vez creado el ambiente lo activamos:
 
 ```
-source django-venv\bin\activate  
+source django-venv/bin/activate  
 ```
 
 Para desactivarlo simplemente ejecutamos el comando `deactivate`. Dependiendo del 
