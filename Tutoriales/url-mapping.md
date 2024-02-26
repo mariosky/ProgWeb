@@ -43,7 +43,7 @@ de realizar la acción sobre el recurso especificado.
 
 Una manera básica de realizar esto en Python es utilizando la librería de expresiones regulares
 para identificar y extraer en un solo paso los parametros e identificadores necesarios. 
-Vamos este ejemplo:
+Veamos este ejemplo:
 
 ```python
 >>> import re
