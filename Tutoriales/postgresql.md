@@ -15,6 +15,11 @@ instancia. Para esto listamos los servicios del sistema, deberia estar listado:
 ```
 
 Si no aparece significa que no está instalado. Debemos ejecutar el playbook correspondiente.
+Otra opción es instalarlo directamente con:
+
+```bash
+sudo apt install postgresql
+```
 
 Una vez instalado el servidor, vamos a probar conectarnos al servidor:
 
