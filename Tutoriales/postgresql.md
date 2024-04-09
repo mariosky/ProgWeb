@@ -55,7 +55,16 @@ Podemos asignar al usuario `ubuntu` el rol de administrador.
 ``` 
 ALTER USER ubuntu WITH SUPERUSER;
 ```
+Para crear un nuevo usuario:
 
+```
+CREATE ROLE ubuntu;
+```
+
+Cambiar o agregar un nuevo password:
+```
+ALTER USER user_name WITH PASSWORD 'new_password';
+```
 ## Instalación de librerías
 
 Requerimos de dos librerías para configurar PosgreSQL con Django.
