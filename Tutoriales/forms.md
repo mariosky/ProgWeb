@@ -7,9 +7,12 @@ de los formularios HTML de manera programática. Los formularios de Django se
 especifican en una clase que hereda de `django.forms.Form`. Por ejemplo, vamos
 a definir un formulario para agregar comentarios:
 
-```python class CommentForm(forms.Form): name = forms.CharField(label="Nombre")
-url = forms.URLField(label="Tu website", required=False) comment =
-forms.CharField() ```
+```python 
+class CommentForm(forms.Form): 
+  name = forms.CharField(label="Nombre")
+  url = forms.URLField(label="Tu website", required=False) 
+  comment = forms.CharField() 
+```
 
 De manera similar a los modelos de Django, `Form` también genera código HTML
 considerando los campos y las validaciones especificados en la clase. En este
