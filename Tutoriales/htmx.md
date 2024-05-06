@@ -5,7 +5,7 @@ permite hacer aplicaciones web modernas sin tener que escribir JavaScript.
 Nuestro formulario acutalmente envía mensajes a un servidor y recarga la
 página, ya sea para mostrar los errores o para continuar a una página
 informativa. Vamos a cambiar esto para que el formulario muestre los errores
-sin que el usuario persiva que la página se recarga. Internamente vamos a
+sin que el usuario persiba que la página se recarga. Internamente vamos a
 enviar los datos del formulario y dinámicamente vamos a actualizar los
 elementos de la página con la información necesaria.
 
