@@ -2,23 +2,23 @@
 
 Vamos a darle un vistazo a [htmx](http:\\htmx.org), una librería que nos
 permite hacer aplicaciones web modernas sin tener que escribir JavaScript.
-Nuestro formulario acutalmente envía mensajes a un servidor y recarga la
+Nuestro formulario actualmente envía mensajes a un servidor y recarga la
 página, ya sea para mostrar los errores o para continuar a una página
 informativa. Vamos a cambiar esto para que el formulario muestre los errores
-sin que el usuario persiba que la página se recarga. Internamente vamos a
-enviar los datos del formulario y dinámicamente vamos a actualizar los
-elementos de la página con la información necesaria.
+sin que el usuario perciba que la página se recarga. Vamos a
+enviar los datos del formulario en segundo plano y dinámicamente vamos a actualizar los
+elementos de la página con la información recibida como HTML.
 
 Para lograr esta funcionalidad normalmente se utiliza JavaScript, enviando
 peticiones asíncronas al servidor, recibiendo la respuesta en formato JSON y
 actualizando los elementos de la página. `htmx` nos permite hacer esto sin
-tener que escribir JavaScript, ni romper con la filosofía de la Web, la cual se
+romper con la filosofía de la Web, la cual se
 basa en concepto de **hipertexto**. En lugar de enviar peticiones asíncronas,
-la librería nos permite enviar peticiones que reciben **hipertexto**. Nosotros ya
-sabemos como enviar mensajes al servior, procesar la petición y devolver una
+la librería nos permite enviar peticiones que reciben como respuesta **hipertexto**. Nosotros ya
+sabemos como enviar mensajes HTTP al servidor, procesar la petición y devolver una
 respuesta en formato HTML. Utilizando `htmx` podemos trabajar como hasta ahora,
-pero agragando la posibilidad de intercambiar elementos de nuestra página por
-HTML que recibimos dinámicamente desde el servidor. 
+pero agregando la posibilidad de intercambiar elementos de nuestra página por nuevos elementos
+HTML que recibimos desde el servidor. 
 
 htmx utiliza atributos HTML para brindarnos la funcionalidad de AJAX,
 Transiciones CSS, WebSockets y SSE directamente en HTML. Vamos a ver un ejemplo. 
