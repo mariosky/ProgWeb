@@ -1,6 +1,6 @@
 ## </> htmx 
 
-Vamos a darle un vistazo a (htmx)[http:\\htmx.org], una librería que nos permite hacer
+Vamos a darle un vistazo a [htmx](http:\\htmx.org), una librería que nos permite hacer
 aplicaciones web modernas sin tener que escribir JavaScript. Nuestro formulario acutalmente 
 envía mensajes a un servidor y recarga la página, ya sea para mostrar los errores o para continuar 
 a una página informativa. Vamos a cambiar esto para que el formulario muestre los errores sin 
@@ -22,7 +22,7 @@ Transiciones CSS, WebSockets y SSE directamente en HTML. Vamos a ver un ejemplo.
 
 Podemos descargar `htmx` desde su [página oficial](http://htmx.org) o utilizar
 un CDN. Vamos a utilizar un CDN para que sea más sencillo. Vamos a instalar de
-una vez `hyperscript` así que agregamos los siguientes scripts en el `<head>`
+una vez [hyperscript](http:\\hyperscript.org) así que agregamos los siguientes scripts en el `<head>`
 de nuestro template `base.html`.
 
 ```html
@@ -33,7 +33,7 @@ de nuestro template `base.html`.
 Como estamos utilizando Django, recordemos que las peticiones tipo `POST` requieren un token CSRF. Para evitar problemas
 vamos agregar el atributo `hx-headers` al elemento `body` de nuestro template `base.html`: 
 
-```html 
+```html
 <body class="bg-white dark:bg-slate-900" hx-headers='{"X-CSRFToken": "{{ csrf_token }}"}'>
 </body>
 ```
@@ -63,7 +63,6 @@ Modifica el formularion en `name.html` para que se vea de la siguiente manera:
                 Save
             </button>
         </div> 
-        
     </form>
 </div>
 
@@ -79,6 +78,5 @@ atributo al elemento `form`:
 ```html
 _="on htmx:afterOnLoad log 'Saved'"
 ```
-
 
 
