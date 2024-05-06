@@ -1,21 +1,26 @@
 ## </> htmx 
 
-Vamos a darle un vistazo a [htmx](http:\\htmx.org), una librería que nos permite hacer
-aplicaciones web modernas sin tener que escribir JavaScript. Nuestro formulario acutalmente 
-envía mensajes a un servidor y recarga la página, ya sea para mostrar los errores o para continuar 
-a una página informativa. Vamos a cambiar esto para que el formulario muestre los errores sin 
-que el usuario persiva que la página se recarga. Internamente vamos a enviar los datos del formulario
-y dinámicamente vamos a actualizar los elementos de la página con la información necesaria.
+Vamos a darle un vistazo a [htmx](http:\\htmx.org), una librería que nos
+permite hacer aplicaciones web modernas sin tener que escribir JavaScript.
+Nuestro formulario acutalmente envía mensajes a un servidor y recarga la
+página, ya sea para mostrar los errores o para continuar a una página
+informativa. Vamos a cambiar esto para que el formulario muestre los errores
+sin que el usuario persiva que la página se recarga. Internamente vamos a
+enviar los datos del formulario y dinámicamente vamos a actualizar los
+elementos de la página con la información necesaria.
 
-Para lograr esta funcionalidad normalmente se utiliza JavaScript, enviando peticiones asíncronas al servidor,
-recibiendo la respuesta en formato JSON y actualizando los elementos de la página. `htmx` nos permite hacer esto sin tener
-que escribir JavaScript, ni romper con la filosofía de la Web, la cual se basa en concepto de **hipertexto**.
-En lugar de enviar peticiones asíncronas, `htmx` nos permite enviar peticiones que reciben **hipertexto**. 
-Nosotros ya sabemos como enviar mensajes al servior, procesar la petición y devolver una respuesta en formato HTML. 
-Utilizando `htmx` podemos trabajar como hasta ahora, pero agragando la posibilidad de intercambiar 
-elementos de nuestra página por HTML que recibimos dinámicamente desde el servidor. 
+Para lograr esta funcionalidad normalmente se utiliza JavaScript, enviando
+peticiones asíncronas al servidor, recibiendo la respuesta en formato JSON y
+actualizando los elementos de la página. `htmx` nos permite hacer esto sin
+tener que escribir JavaScript, ni romper con la filosofía de la Web, la cual se
+basa en concepto de **hipertexto**. En lugar de enviar peticiones asíncronas,
+la librería nos permite enviar peticiones que reciben **hipertexto**. Nosotros ya
+sabemos como enviar mensajes al servior, procesar la petición y devolver una
+respuesta en formato HTML. Utilizando `htmx` podemos trabajar como hasta ahora,
+pero agragando la posibilidad de intercambiar elementos de nuestra página por
+HTML que recibimos dinámicamente desde el servidor. 
 
-htmx utiliza atributos HTML para brindarnos la funcionalidad avanzada de AJAX,
+htmx utiliza atributos HTML para brindarnos la funcionalidad de AJAX,
 Transiciones CSS, WebSockets y SSE directamente en HTML. Vamos a ver un ejemplo. 
 
 ### Instalación
@@ -30,8 +35,9 @@ de nuestro template `base.html`.
   <script src="https://unpkg.com/hyperscript.org@0.9.12"></script>
 ```
 
-Como estamos utilizando Django, recordemos que las peticiones tipo `POST` requieren un token CSRF. Para evitar problemas
-vamos agregar el atributo `hx-headers` al elemento `body` de nuestro template `base.html`: 
+Como estamos utilizando Django, recordemos que las peticiones tipo `POST`
+requieren un token CSRF. Para evitar problemas vamos agregar el atributo
+`hx-headers` al elemento `body` de nuestro template `base.html`: 
 
 ```html
 <body class="bg-white dark:bg-slate-900" hx-headers='{"X-CSRFToken": "{{ csrf_token }}"}'>
@@ -69,7 +75,8 @@ Modifica el formularion en `name.html` para que se vea de la siguiente manera:
 {% endblock %}
 ```
 Estamos indicando que cuando el usuario haga click en el botón `Save`, se envíe una petición `POST` al servidor y 
-que el elemento `button` se reemplaze con el HTML que recibamos. 
+que el elemento `button` se reemplaze con el HTML que recibamos. Es importante que veas la documentación de los 
+atributos de [htmx](https://htmx.org/reference/) 
 
 Podemos agregar código adicional en (hyperscript)[http:\\hyperscript.org] para
 que cambie el contenido de manera dinámica. Por ejemplo, agrega el siguiente
