@@ -116,3 +116,42 @@ Ejemplo:
 ```bash
 $ !2932
 ```
+
+### `df -h`
+Nos muestra información sobre el espacio de disco utilizado. El 
+parámetro `-h` nos muestra la información de manera "humana", desplegando 
+las cantidades en giga o mega bytes.
+Ejemplo:
+```bash
+$ df -h
+Filesystem        Size    Used   Avail Capacity iused ifree %iused  Mounted on
+/dev/disk3s1s1   926Gi   9.6Gi   591Gi     2%    404k  4.3G    0%   /
+devfs            204Ki   204Ki     0Bi   100%     706     0  100%   /dev
+```
+
+### `env`
+Muestra las variables de entorno. Estas variables son utilizadas 
+para configurar nuestros programas o servicios.
+Ejemplo:
+```bash
+$ env
+TERM_SESSION_ID=w0t0p0:C6C9AD68-F229-4072-86B7-C330188EF23322
+SSH_AUTH_SOCK=/private/tmp/com.apple.launchd.ArTrbeBCkR/Listeners
+LC_TERMINAL_VERSION=3.5.4
+COLORFGBG=15;0
+ITERM_PROFILE=Default
+XPC_FLAGS=0x0
+LANG=en_US.UTF-8
+PWD=/Users/mario
+SHELL=/bin/zsh
+```
+
+
+### `export` 
+Crea una variables de entorno.
+Ejemplo:
+```bash
+$ export NOMBREVAR="valor"
+$ env | grep NOMBREVAR
+NOMBREVAR=valor
+```
