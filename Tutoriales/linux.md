@@ -15,7 +15,7 @@ $ pwd
 /home/mariosky
 ```
 
-### `ls -al` 
+### `ls -al [ruta]` 
 Imprime el contenido del directorio. El parámetro `a` indica que queremos ver todos 
 los archivos, incluso los ocultos. El parámetro `l` indica que queremos ver un listado 
 con mayor detalle. También se puede ejecutar el comando sin parámetros. Algunas instalaciones 
@@ -32,7 +32,7 @@ drwxr-xr-x   14 mario  staff   448 Sep  6 12:22 .git
 ```
 El punto `.` indica el directorio actual y el doble punto `..` el directorio padre.
 
-### `mkdir` 
+### `mkdir <ruta>` 
 Crea un directorio. Se utiliza la posición actual para 
 no tener que escribir toda la ruta. Por ejemplo, si quiero crear un subidrectorio
 solamente se escribe el nombre del directorio y se asume que es desde la posición actual.
@@ -44,10 +44,11 @@ $ ls
 create_user.md directorio
 ```
 
-### `cd` 
+### `cd <ruta>` 
 Cambia nuestra posición a otro directorio. Se utiliza la posición actual para 
 no tener que escribir toda la ruta. Por ejemplo, si quiero ir a un subidrectorio
-solamente se escribe el nombre del directorio.
+solamente se escribe el nombre del directorio. Si no especificamos la ruta 
+nos vamos a mover al directorio `HOME` del usuario.
 
 Ejemplo:
 ```bash
@@ -58,3 +59,60 @@ drwxr-xr-x  2 mario  staff   64 Sep 10 12:33 .
 drwxr-xr-x  5 mario  staff  160 Sep 10 12:33 ..
 ```
 
+### `mv <origen> <destino>`  
+Mueve de lugar un directorio o archivo. También utilizamos el comando para renombrar un archivo o directorio.
+
+Ejemplo:
+```bash
+$ ls
+directorio
+$ mv directorio directorio_nuevo
+$ ls
+directorio_nuevo
+```
+
+### `rm -rf <ruta>`  
+Borra un directorio o archivo. En caso de que sea un directorio y no esté vacio
+podemos forzar el borrar de manera recursiva con los parámetros `rf` 
+
+Ejemplo:
+```bash
+$ ls
+directorio
+$ mv directorio directorio_nuevo
+$ ls
+directorio_nuevo
+```
+
+### `touch <archivo>` 
+Actualiza la fecha de un archivo. Si no existe lo crea. Lo utilizamos para 
+crear un archivo vacio de una manera rápida.
+
+### `clear`
+Borra la pantalla de la terminal.
+
+### `grep <expresion-regular>`
+Busca un patrón en líneas de texto o un archivo. Normalmente lo podemos
+utilizar con el concepto de pipas (que reciba como entrada la salida de otro comando). 
+Ejemplo:
+```bash
+$ ls | grep directorio
+directorio_nuevo
+```
+
+### `history`
+Nos regresa una lista de los comandos que hemos ejecutado recientemente. Podemos
+volver a ejecutar el comando con el su número. Podemos utilizarlo en conjunto con 
+`grep`.
+
+Ejemplo:
+```bash
+$ history | grep directorio
+ 2932  mkdir directorio
+ 2934  cd directorio
+```
+Para ejecutar el comando le anteponemos el símbolo de exclamación.
+Ejemplo:
+```bash
+$ !2932
+```
