@@ -155,3 +155,16 @@ $ export NOMBREVAR="valor"
 $ env | grep NOMBREVAR
 NOMBREVAR=valor
 ```
+
+
+### `scp [OPTION] [user@]SRC_HOST:]file1 [user@]DEST_HOST:]file2` 
+Secure Copy (scp) es una utilería CLI la cual nos sirve para 
+copiar de manera segura archivos de una computadora a otra. Se utiliza 
+el protocolo SSH para autentíficar al usuario y para cifrar los datos que 
+se van a copiar.
+Ejemplo:
+```bash
+$ scp archivo.txt ubuntu@10.0.1.2:/directorio/remoto
+$ scp "~Projecto/*.*" ubuntu@10.10.0.2:/home/ubuntu/Projecto/
+```
+
