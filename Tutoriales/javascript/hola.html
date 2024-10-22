@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Hola</title>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        document.querySelector('form').onsubmit = () => {
+          const nombre = document.querySelector('#nombre').value;
+          document.querySelector('h1').innerHTML = `Hola, ${nombre}`;
+          return false;
+        }
+      });
+
+    </script>
+  </head>
+  <body>
+    <h1>Hola</h1>
+    <form>
+     <input type="text"  placeholder="Nombre" id="nombre"/> 
+     <input type='submit'/>
+    </form>
+  </body>
+</html>

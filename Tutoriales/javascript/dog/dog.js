@@ -1,7 +1,7 @@
-function setImage(api){
+function setImage(api) {
   const headers = new Headers({
     "Content-Type": "application/json",
-    "x-api-key": "live_BWDYdpGKzi2Qw1CDRgWDsNIWyiM7UbAEHu3rlteKy0N0vZccuXU2CCrRqtEEgDGH",
+    "x-api-key": "live_TuPropiaLLavedpGKzEHu3rlteKy0N0vZccuXU2CCrRqtEEgDGH",
   });
 
   var requestOptions = {
@@ -22,17 +22,18 @@ function setImage(api){
       document.querySelector("#main-img").src = data[0].url;
     });
 }
-  
+
 document.addEventListener("DOMContentLoaded", () => {
-        
-  document.querySelector("#fav-img").src = window.localStorage.getItem("fav-img");
-  document.querySelector("#main-img").src = window.localStorage.getItem("fav-img");
+  document.querySelector("#fav-img").src =
+    window.localStorage.getItem("fav-img");
+  document.querySelector("#main-img").src =
+    window.localStorage.getItem("fav-img");
   document.querySelector("#fav-button").onclick = () => {
-        console.log('fav')
-        favImgUrl = document.querySelector("#main-img").src;
-        window.localStorage.setItem("fav-img",favImgUrl);
-        document.querySelector("#fav-img").src = favImgUrl;
-   } 
+    console.log("fav");
+    favImgUrl = document.querySelector("#main-img").src;
+    window.localStorage.setItem("fav-img", favImgUrl);
+    document.querySelector("#fav-img").src = favImgUrl;
+  };
 
   document.querySelectorAll(".api-button").forEach((button) => {
     button.onclick = () => {
@@ -40,5 +41,4 @@ document.addEventListener("DOMContentLoaded", () => {
       setImage(button.dataset.api);
     };
   });
-
 });
