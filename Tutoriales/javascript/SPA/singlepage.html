@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title></title>
+    <style>
+      div {
+        display: none;
+      }
+    </style>
+    <script lang="javascript">
+      function showPage(page) {
+        document.querySelectorAll("div").forEach((div) => {
+          div.style.display = "none";
+        });
+        document.querySelector(`#page${page}`).style.display = "block";
+        const url = new URL(location);
+        url.searchParams.set("page", page);
+      }
+
+      window.onpopstate = (event) => {
+        console.log(event.state.page);
+        showPage(event.state.page);
+      };
+
+      document.addEventListener("DOMContentLoaded", () => {
+        document.querySelectorAll("button").forEach((button) => {
+          const page = button.dataset.page;
+          button.onclick = () => {
+            showPage(page);
+            history.pushState({ page: page }, "", `?page=#page${page}`);
+          };
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <button data-page="1">Página 1</button>
+    <button data-page="2">Página 2</button>
+    <button data-page="3">Página 3</button>
+
+    <div id="page1">
+      <h1>Página 1</h1>
+    </div>
+
+    <div id="page2">
+      <h1>Página 2</h1>
+    </div>
+
+    <div id="page3">
+      <h1>Página 3</h1>
+    </div>
+  </body>
+</html>
