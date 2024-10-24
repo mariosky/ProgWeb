@@ -115,6 +115,16 @@ Ahora simplemente ejecutamos `migrate`.
 
 Revisa que efectivamente las tablas se crearon en la base de datos.
 
+### Backup 
+Para hacer un respaldo de tu base de datos:
+```bash
+pg_dump -U user_name -h remote_host -p remote_port name_of_database > name_of_backup_file
+```
+Para cargar el respaldo:
+```bash
+psql -h localhost -U user_name name_of_database < name_of_backup_file
+```
+
 ## Tarea
 
 Utilizando `django-environ` protege tu archivo de `settings.py` para
