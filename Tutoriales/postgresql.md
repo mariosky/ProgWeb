@@ -55,6 +55,10 @@ Podemos asignar al usuario `ubuntu` el rol de administrador.
 ``` 
 ALTER USER ubuntu WITH SUPERUSER;
 ```
+Que pueda hacer login:
+```bash
+ALTER ROLE ubuntu WITH LOGIN;
+```
 Para crear un nuevo usuario:
 
 ```
