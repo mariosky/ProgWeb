@@ -168,3 +168,21 @@ $ scp archivo.txt ubuntu@10.0.1.2:/directorio/remoto
 $ scp "~Projecto/*.*" ubuntu@10.10.0.2:/home/ubuntu/Projecto/
 ```
 
+### Grupos
+
+Añadir un usuario existente a un grupo que ya existe
+```bash
+sudo usermod -a -G groupName userName
+```
+
+Ver que usuarios pertenecen a un grupo (intalar el programa members)
+```bash
+members groupName userName
+```
+Ver a que grupos pertenece un usuario 
+
+```bash
+groups userName
+```
+
+
