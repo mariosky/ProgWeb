@@ -1,14 +1,14 @@
 ## URLs
-´´´python
+```python
 from django.urls import path, include
 urlpatterns = [
     path('accounts/', include('django.contrib.auth.urls') ),
 ]
-´´´
+```
 
 ## Forma de Registro
 
-´´´html
+```html
 {% if form.errors %}
 <p>Your username and password didn't match. Please try again.</p>
 {% endif %}
@@ -41,5 +41,5 @@ urlpatterns = [
 
 {# Assumes you set up the password_reset view in your URLconf #}
 <p><a href="{% url 'password_reset' %}">Lost password?</a></p>
-´´´
+```
 
