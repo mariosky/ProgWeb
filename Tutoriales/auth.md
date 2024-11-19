@@ -53,4 +53,4 @@ urlpatterns = [
 ```
 
 ## Plantilla
-[https://tailwindui.com/components/application-ui/application-shells/stacked]
+(https://tailwindui.com/components/application-ui/application-shells/stacked)
