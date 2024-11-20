@@ -99,6 +99,7 @@ def logout_view(request):
 
 ## Plantillas
 
+### login.html
 ```django
 {% if errors %}
 <p> No se pudo hacer login</p>
@@ -111,7 +112,7 @@ def logout_view(request):
     <input type="submit" value="login">
 </form>
 ```
-
+### profile.html
 ```django
 <h1>Hola {{request.user}}</h1>
 <p> <a href='{% url "logout" %}'> Cerrar Sesión</a>  </p>
