@@ -62,7 +62,7 @@ urlpatterns = [
 
 # Vistas
 
-['https://docs.djangoproject.com/en/5.1/topics/auth/default/#django.contrib.auth.login']
+[Documentación](https://docs.djangoproject.com/en/5.1/topics/auth/default/#django.contrib.auth.login)
 
 ```python
 
