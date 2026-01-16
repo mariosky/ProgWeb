@@ -8,7 +8,7 @@
 
 
 
-project = 'Programción Web'
+project = 'Programación Web'
 copyright = '2026, J Mario García Valdez'
 author = 'J Mario García Valdez'
 release = '2026-1'
@@ -29,7 +29,7 @@ templates_path = ['_templates']
 
 html_theme = 'sphinx_book_theme'
 html_static_path = ['_static']
-html_title = 'Programción Web'
+html_title = 'Programación Web'
 
 exclude_patterns = []
 
