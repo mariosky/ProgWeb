@@ -1,0 +1,6 @@
+sphinx>=7.2
+furo>=2024.1.29
+myst-parser>=3.0.0
+sphinxcontrib-bibtex
+sphinx-book-theme>=1.1.4
+sphinx-copybutton

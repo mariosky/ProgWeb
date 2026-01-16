@@ -2,7 +2,7 @@
 tailwindcss
 
 # Sphinx build
-docs-src/_build/
+docs-src/build/
 
 # Python
 __pycache__/

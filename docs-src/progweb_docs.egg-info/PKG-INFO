@@ -1,0 +1,10 @@
+Metadata-Version: 2.4
+Name: progweb-docs
+Version: 0.1.0
+Requires-Python: >=3.10
+Requires-Dist: sphinx>=7.2
+Requires-Dist: furo>=2024.1.29
+Requires-Dist: myst-parser>=3.0.0
+Requires-Dist: sphinxcontrib-bibtex
+Requires-Dist: sphinx-book-theme>=1.1.4
+Requires-Dist: sphinx-copybutton
