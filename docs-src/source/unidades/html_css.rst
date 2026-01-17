@@ -3,9 +3,6 @@ HTML y XML
 
 `Ver presentación del curso <../_static/pdf/html-css.pdf>`_
 
-6. Selectores (*CSS, Tailwind CSS*).
-7. Modelo de caja (*CSS, Tailwind CSS*).
-
 En esta parte del curso se introducen **HTML y CSS** como las tecnologías base
 para la construcción de interfaces web. Antes de hablar de estilos, animaciones o
 frameworks, es fundamental comprender que la Web se apoya en documentos
@@ -38,7 +35,7 @@ el posicionamiento en buscadores y la reutilización del contenido en distintos
 contextos.
 
 Estructura global de un documento Web
-=====================================
+-------------------------------------
 
 El siguiente ejemplo muestra una estructura típica de un documento HTML5,
 incluyendo encabezado, navegación, contenido principal, secciones y pie de página.
