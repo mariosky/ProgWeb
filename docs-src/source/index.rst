@@ -60,11 +60,12 @@ computadora. Ver la sección :doc:`curso/herramientas` para conocer las alternat
    :hidden:
    :caption: Unidades:
     
-   unidades/introducción 
-   unidades/html_css
-   unidades/javascript
-   unidades/django
-   unidades/cloud
+   unidades/introduccion/lectura
+   unidades/html_css/lectura
+   unidades/javascript/lectura
+   unidades/django/lectura
+   unidades/cloud/lectura
+
 
 
 
