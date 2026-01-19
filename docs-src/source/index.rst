@@ -66,7 +66,13 @@ computadora. Ver la sección :doc:`curso/herramientas` para conocer las alternat
    unidades/django/lectura
    unidades/cloud/lectura
 
+.. toctree::
+   :glob:
+   :hidden:
+   :caption: Tutoriales:
 
+   tutoriales/django_setup
+   tutoriales/django_orm
 
 
 

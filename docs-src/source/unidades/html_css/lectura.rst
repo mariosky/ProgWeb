@@ -136,6 +136,9 @@ por qué HTML y HTTP están estrechamente relacionados.
 
 Lenguajes de presentación en documentos Web (*CSS, Tailwind CSS*)
 -----------------------------------------------------------------
+
+`Ver presentación del curso <../_static/pdf/tailwindcss.pdf>`_
+
 Una vez definida la estructura del documento, **CSS** se encarga de su
 presentación. CSS permite controlar la apariencia visual y la distribución de los
 elementos sin modificar la estructura HTML. Conceptos como el flujo normal del
