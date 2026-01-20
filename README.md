@@ -2,7 +2,7 @@
 
 📌 **Entrega oficial:** Google Classroom (por links)  
 💻 **Código y proyectos:** GitHub  
-📚 **Sitio del curso**: `GitHub Pages <https://mariosky.github.io/ProgWeb/>`_
+📚 **Sitio del curso**: [GitHub Pages](https://mariosky.github.io/ProgWeb/)
 
 # Progamación Web
 Esta asignatura aporta al perfil del egresado la capacidad para desarrollar y administrar software que
