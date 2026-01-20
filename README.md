@@ -1,6 +1,6 @@
 📚 **Sitio del curso**: [GitHub Pages](https://mariosky.github.io/ProgWeb/)
 
-# Progamación Web
+# Programación Web
 Esta asignatura aporta al perfil del egresado la capacidad para desarrollar y administrar software que
 apoye la productividad y competitividad de las organizaciones cumpliendo con estándares de
 calidad, mediante el desarrollo de aplicaciones web utilizando lenguajes de marcas, de presentación,
