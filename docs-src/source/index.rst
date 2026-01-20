@@ -71,6 +71,7 @@ computadora. Ver la sección :doc:`curso/herramientas` para conocer las alternat
    :hidden:
    :caption: Tutoriales:
 
+   tutoriales/nix
    tutoriales/django_setup
    tutoriales/django_orm
 
