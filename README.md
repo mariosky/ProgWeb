@@ -1,7 +1,3 @@
-# Programación Web (ProgWeb)
-
-📌 **Entrega oficial:** Google Classroom (por links)  
-💻 **Código y proyectos:** GitHub  
 📚 **Sitio del curso**: [GitHub Pages](https://mariosky.github.io/ProgWeb/)
 
 # Progamación Web
@@ -38,20 +34,21 @@ aplicaciones para el tratamiento de información.
 2. Arquitectura de las aplicaciones web.
 3. Tecnologías para el desarrollo de aplicaciones web.
 4. Planificación de aplicaciones web.
-#### Presentaciones
-* [Introducción al curso](Presentaciones/Presentacion.pdf)
-* [Introducción a las aplicaciones web](Presentaciones/IntroWebApps.pdf)
-* [Ansible](Presentaciones/ProgWeb-Ansible.pdf)
-#### Tutoriales
-* [DNS Dinámico NO-IP](Tutoriales/NOIP.md)
 
 ### Unidad 2: HTML y XML 
 1. Introducción.
 2. Estructura global de un documento Web.
 3. Elementos básicos: texto, vínculos, listas, tablas, objetos, imágenes y aplicaciones.
 4. Formularios
-#### Presentaciones
-* [HTML](Presentaciones/HTML.pdf)
+5. Lenguajes de presentación en documentos Web. (CSS, Tailwindcss)
+6. Selectores.(CSS, Tailwindcss)
+7. Modelo de caja.(CSS, Tailwindcss)
+
+### Unidad 4: Programación del lado del cliente
+1. Introducción al lenguaje. (JavaScript)
+2. Manejo de Frameworks. (htmx, React) 
+3. Estructuras de Control. (htmx, React)
+4. Manipulación de objetos.(htmx, React)
 
 ### Unidad 3: Programación del lado del servidor
 1. Introducción al lenguaje. *Python, Django*
@@ -61,17 +58,6 @@ aplicaciones para el tratamiento de información.
 5. Creación de clases. *Django Models*
 6. Acceso a datos. *Django ORM, Redis*
 7. Autentificación
-#### Presentaciones
-* [Introducción a Python](Presentaciones/PythonIntro.pdf)
-
-### Unidad 4: Programación del lado del cliente
-1. Introducción al lenguaje. (JavaScript)
-2. Manejo de Frameworks. (htmx, React) 
-3. Estructuras de Control. (htmx, React)
-4. Manipulación de objetos.(htmx, React)
-5. Lenguajes de presentación en documentos Web. (CSS, Tailwindcss)
-6. Selectores.(CSS, Tailwindcss)
-7. Modelo de caja.(CSS, Tailwindcss)
 
 ### Unidad 5: Cómputo en la nube y servicios
 1. Conceptos generales. (AWS, Ansible)
@@ -95,9 +81,3 @@ proyecto automatizada con ansible.
 Además se debe incluir el link a un video de máximo cinco minutos
 dónde se explique el código, funcionamiento y desiciones de diseño.
 
-1. [GoodReads](https://github.com/mariosky/GoodReads)
-1. [MyMovies](https://github.com/mariosky/MyMovies)
-   
-### Recursos
-
-1. [AWS Academy](https://awsacademy.instructure.com/)
