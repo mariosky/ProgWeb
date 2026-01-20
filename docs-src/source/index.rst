@@ -3,7 +3,7 @@ Programación Web
 
 - 📌 **Entrega oficial:** Google Classroom (por links)  
 - 💻 **Código y proyectos:** GitHub  
-- 📚 **Sitio del curso:** GitHub Pages
+- 📚 **Sitio del curso**: `GitHub Pages <https://mariosky.github.io/ProgWeb/>_
 - ☁️ `AWS Academy <https://awsacademy.instructure.com/>`_ 
 
 Bienvenidos
