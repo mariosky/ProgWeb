@@ -1,28 +1,35 @@
-============================================================
 Guía de Configuración: Entorno de Desarrollo con Nix Flakes
 ============================================================
 
 Introducción
 ------------
 
-En este curso utilizaremos **Nix** para gestionar nuestro entorno de desarrollo. 
+En este curso utilizaremos `Nix <https://nixos.org/>`_ para gestionar nuestro entorno de desarrollo. 
 
 ¿Qué es Nix y Nix Flakes?
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Nix es un gestor de paquetes que permite tener entornos aislados y reproducibles. A diferencia de ``apt`` o ``brew``, Nix no instala cosas "en tu sistema" globalmente, sino en un almacén inmutable.
+Nix es un gestor de paquetes que nos permite tener entornos aislados y
+reproducibles. A diferencia de instalar el software que necesitamos utilizando
+``apt`` o ``brew``, Nix no instala cosas "en tu sistema", sino en un almacén
+inmutable.
 
 **Nix Flakes** es la evolución moderna de Nix. Funciona mediante un archivo ``flake.nix`` que actúa como un contrato:
 
-* **Reproducibilidad Pura:** Si funciona en mi máquina, funciona en la tuya. Garantiza las mismas versiones de Python, Node y Postgres byte por byte.
+* **Reproducibilidad Pura:** Si funciona en mi máquina, funciona en la tuya.
+  Garantiza las mismas versiones de Python, Node, Postgres y otros requerimentos byte por byte.
+
 * **Sin Conflictos:** Puedes tener Python 3.11 en este proyecto y Python 3.8 en otro sin que choquen.
-* **Efemeros:** El entorno existe solo mientras lo necesitas. Al salir, tu terminal vuelve a la normalidad.
-* **Declarativo:** Todo el entorno se define en código, no en una lista de pasos manuales en un PDF.
+
+* **Efímeros:** El entorno existe solo mientras lo necesitas. Al salir, tu terminal vuelve a su estado original.
+
+* **Declarativo:** Todo el entorno se define en código. No necesitas copiar y pegar comandos para 
+  instalar lo necesario.
 
 Instalación en Ubuntu (Paso a Paso)
 -----------------------------------
 
-Asumiendo una instalación fresca de Ubuntu (o WSL), sigue estos pasos:
+Asumiendo una instalación nueva de Ubuntu (o WSL):
 
 1. Instalación Multi-usuario
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -48,7 +55,8 @@ Una vez terminada la instalación, reinicia tu terminal o ejecuta:
 3. Habilitar Flakes
 ~~~~~~~~~~~~~~~~~~~
 
-Por defecto, la funcionalidad de Flakes es experimental. Debemos activarla permanentemente:
+Por defecto, la funcionalidad de Flakes es experimental. Debemos activarla
+permanentemente en el archivo de configuración:
 
 .. code-block:: bash
 
@@ -60,13 +68,18 @@ Estrategia de Trabajo: Capas y Herramientas
 
 Para mantener el orden, dividiremos las herramientas en dos capas:
 
-* **Capa 1: Herramientas Personales (Taller):** Neovim, Tmux, Git, Github CLI.
-* **Capa 2: Dependencias del Proyecto (Materiales):** Django, React, Postgres.
+* **Capa 1: Herramientas personales de trabajo (Taller):** `neovim`, `tmux`, `git`, `Github CLI`.
+  Las herramientas no cambian de proyecto en proyecto, queremos que siempre esten disponibles.
+
+* **Capa 2: Dependencias del Proyecto (Materiales):** Django, React, Postgres, Nginx.
+  Las dependencias son particulares a un proyecto, aquí a veces utilizamos Django, otras Flask o FasrAPI.
+  Además las versiones pueden cambiar por proyecto, por ejepmlo Django 4.1 o Django 5.3.
 
 Uso Básico
 ~~~~~~~~~~
 
-En cada repositorio del curso encontrarás un archivo ``flake.nix``. Para activar el entorno, simplemente navega a la carpeta y ejecuta:
+En cada repositorio del curso encontrarás un archivo ``flake.nix`` donde se especifican dependencias 
+particulares para ese proyecto. Para activar el entorno, simplemente navega a la carpeta y ejecuta:
 
 .. code-block:: bash
 
@@ -77,10 +90,10 @@ La primera vez tardará unos minutos descargando dependencias. Las siguientes ve
 Integración con Tmux y Postgres
 -------------------------------
 
-Para trabajar cómodamente con servicios como bases de datos, recomendamos usar **Tmux**.
+Para trabajar cómodamente con varios servicios como bases de datos, recomendamos usar **Tmux**.
 
-El Flujo "Paraguas"
-~~~~~~~~~~~~~~~~~~~
+Flujo de Trabajo
+~~~~~~~~~~~~~~~~
 
 Para evitar cargar el entorno en cada ventana nueva, sigue este orden:
 
@@ -93,7 +106,7 @@ Ahora, cualquier ventana o panel que abras en Tmux heredará automáticamente el
 Persistencia de Base de Datos
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Nix es efímero, pero tus datos no deben serlo. Hemos configurado el entorno para que:
+Nix es efímero, pero tus datos deben ser persistentes. Hemos configurado el entorno (archivo `flake.nix`) para que:
 
 1.  Los datos de PostgreSQL vivan en la carpeta ``.postgres_data`` dentro de tu proyecto.
 2.  El socket de conexión viva en ``/tmp`` (para evitar errores de permisos).
@@ -161,7 +174,11 @@ Tips Finales
 ------------
 
 .. tip::
-    Si usas **Git**, asegúrate de ignorar la carpeta de datos. Agrega ``.postgres_data/`` y ``.npm-global/`` a tu archivo ``.gitignore``.
+
+   Si usas **Git**, asegúrate de ignorar la carpeta de datos. Agrega ``.postgres_data/`` y ``.npm-global/`` a tu archivo ``.gitignore``.
 
 .. warning::
-    Si reinicias tu computadora, el servidor de Postgres se detendrá. Solo necesitas entrar a la carpeta, hacer ``nix develop`` y luego ``db-start`` para continuar donde te quedaste.
+
+    Si reinicias tu computadora, el servidor de Postgres se detendrá. Solo
+    necesitas entrar a la carpeta, hacer ``nix develop`` y luego ``db-start``
+    para continuar donde te quedaste.
