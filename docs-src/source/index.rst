@@ -8,7 +8,7 @@ Programación Web
 Plataformas
 -----------
 - 🤖 `GitHub Codespaces <https://github.com/mariosky/ProgWeb/>`_
-- 🔥`Firebase Console <https://console.firebase.google.com/>`_
+- 🔥 `Firebase Console <https://console.firebase.google.com/>`_
 - ☁️ `AWS Academy <https://awsacademy.instructure.com/>`_ 
 
 Bienvenidos
