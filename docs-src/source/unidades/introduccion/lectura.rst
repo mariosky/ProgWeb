@@ -1,7 +1,7 @@
 Introducción a las aplicaciones web
 =============================================
 
-`Ver presentación del curso <../_static/pdf/introduccion.pdf>`_
+`Ver presentación del curso <../../_static/pdf/introduccion.pdf>`_
 
 Evolución de las aplicaciones web.
 ------------------------------------

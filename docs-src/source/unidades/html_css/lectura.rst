@@ -1,7 +1,7 @@
 HTML y XML
 ==========
 
-`Ver presentación del curso <../_static/pdf/html-css.pdf>`_
+`Ver presentación del curso <../../_static/pdf/html-css.pdf>`_
 
 En esta parte del curso se introducen **HTML y CSS** como las tecnologías base
 para la construcción de interfaces web. Antes de hablar de estilos, animaciones o
