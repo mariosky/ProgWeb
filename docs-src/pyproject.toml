@@ -13,5 +13,6 @@ dependencies = [
   "sphinxcontrib-bibtex",
   "sphinx-book-theme>=1.1.4",
   "sphinx-copybutton",
+  "sphinx-new-tab-link",
 ]
 

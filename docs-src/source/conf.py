@@ -16,7 +16,7 @@ release = '2026-1'
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
-extensions = ['sphinxcontrib.bibtex','sphinx_copybutton', ]
+extensions = ['sphinxcontrib.bibtex','sphinx_copybutton','sphinx-new-tab-link']
 copybutton_prompt_text = r">>>|\.\.\."
 copybutton_prompt_is_regexp = True
 bibtex_bibfiles = ['biblio.bib']
