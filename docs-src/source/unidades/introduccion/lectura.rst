@@ -51,6 +51,10 @@ complejas que la simple publicación y consulta de documentos.
    funcional del protocolo, que permita observar de forma directa cómo se
    reciben las peticiones y se generan las respuestas en un servidor web.
 
+.. note::
+
+   Podemos utilizar `telnet` para realizar peticiones HTTP, :doc:`telnet_http`. 
+
 Con el paso del tiempo, los navegadores incorporaron la capacidad de ejecutar
 código, y las aplicaciones web comenzaron a transformarse en sistemas
 interactivos. Surgieron así aplicaciones que combinan **recursos estáticos y
