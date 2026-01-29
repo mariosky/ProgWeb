@@ -53,7 +53,7 @@ complejas que la simple publicación y consulta de documentos.
 
 .. note::
 
-   Podemos utilizar `telnet` para realizar peticiones HTTP, :doc:`telnet_http`. 
+   Podemos utilizar `telnet` para realizar peticiones HTTP, :doc:`Ejemplo telnet <telnet_http>`. 
 
 Con el paso del tiempo, los navegadores incorporaron la capacidad de ejecutar
 código, y las aplicaciones web comenzaron a transformarse en sistemas
