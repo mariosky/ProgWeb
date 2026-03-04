@@ -1,128 +1,48 @@
+============================================================
 Guía de Configuración: Entorno de Desarrollo con Nix Flakes
 ============================================================
 
 Introducción
 ------------
 
-En este curso utilizaremos `Nix <https://nixos.org/>`_ para gestionar nuestro entorno de desarrollo. 
+En este curso utilizaremos `Nix <https://nixos.org/>`_ para gestionar nuestro entorno de desarrollo de forma aislada y reproducible. 
 
-¿Qué es Nix y Nix Flakes?
-~~~~~~~~~~~~~~~~~~~~~~~~~
+Nix nos permite asegurar que todos tengamos exactamente las mismas versiones de Python, Node.js y PostgreSQL, evitando el clásico error de "en mi máquina funciona".
 
-Nix es un gestor de paquetes que nos permite tener entornos aislados y
-reproducibles. A diferencia de instalar el software que necesitamos utilizando
-``apt`` o ``brew``, Nix no instala cosas "en tu sistema", sino en un almacén
-inmutable.
+1. Instalación de Nix (Ubuntu / WSL)
+------------------------------------
 
-**Nix Flakes** es la evolución moderna de Nix. Funciona mediante un archivo ``flake.nix`` que actúa como un contrato:
-
-* **Reproducibilidad Pura:** Si funciona en mi máquina, funciona en la tuya.
-  Garantiza las mismas versiones de Python, Node, Postgres y otros requerimentos byte por byte.
-
-* **Sin Conflictos:** Puedes tener Python 3.11 en este proyecto y Python 3.8 en otro sin que choquen.
-
-* **Efímeros:** El entorno existe solo mientras lo necesitas. Al salir, tu terminal vuelve a su estado original.
-
-* **Declarativo:** Todo el entorno se define en código. No necesitas copiar y pegar comandos para 
-  instalar lo necesario.
-
-Instalación en Ubuntu (Paso a Paso)
------------------------------------
-
-Asumiendo una instalación nueva de Ubuntu (o WSL):
-
-1. Instalación Multi-usuario
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Ejecuta el siguiente script oficial. Usamos el modo *daemon* para mayor seguridad y aislamiento.
+Si estás en una instalación limpia de Ubuntu o Windows Subsystem for Linux (WSL), ejecuta el instalador oficial en modo *daemon*:
 
 .. code-block:: bash
 
-    sh <(curl -L https://nixos.org/nix/install) --daemon
+    sh <(curl -L [https://nixos.org/nix/install](https://nixos.org/nix/install)) --daemon
 
-.. note::
-    Responde "Yes" a las preguntas de confirmación y permite el uso de ``sudo`` cuando lo solicite.
+* **Nota:** Responde "Yes" a las preguntas del instalador. Se te pedirá la contraseña de ``sudo``.
+* Al finalizar, reinicia tu terminal o ejecuta el comando que te indique el instalador para cargar las variables de entorno.
 
-2. Activar Nix
-~~~~~~~~~~~~~~
+2. Habilitar Nix Flakes
+-----------------------
 
-Una vez terminada la instalación, reinicia tu terminal o ejecuta:
-
-.. code-block:: bash
-
-    . /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh
-
-3. Habilitar Flakes
-~~~~~~~~~~~~~~~~~~~
-
-Por defecto, la funcionalidad de Flakes es experimental. Debemos activarla
-permanentemente en el archivo de configuración:
+Nix Flakes es la característica que nos permite definir el entorno en un archivo. Para activarlo, ejecuta:
 
 .. code-block:: bash
 
     mkdir -p ~/.config/nix
     echo "experimental-features = nix-command flakes" >> ~/.config/nix/nix.conf
 
-Estrategia de Trabajo: Capas y Herramientas
--------------------------------------------
+3. Configuración del Proyecto
+-----------------------------
 
-Para mantener el orden, dividiremos las herramientas en dos capas:
+Ahora prepararás la carpeta donde trabajarás. Sigue estos pasos:
 
-* **Capa 1: Herramientas personales de trabajo (Taller):** `neovim`, `tmux`, `git`, `Github CLI`.
-  Las herramientas no cambian de proyecto en proyecto, queremos que siempre esten disponibles.
+1. Crea tu carpeta de trabajo y entra en ella:
+   
+   .. code-block:: bash
 
-* **Capa 2: Dependencias del Proyecto (Materiales):** Django, React, Postgres, Nginx.
-  Las dependencias son particulares a un proyecto, aquí a veces utilizamos Django, otras Flask o FasrAPI.
-  Además las versiones pueden cambiar por proyecto, por ejepmlo Django 4.1 o Django 5.3.
+      mkdir mi-proyecto-web && cd mi-proyecto-web
 
-Uso Básico
-~~~~~~~~~~
-
-En cada repositorio del curso encontrarás un archivo ``flake.nix`` donde se especifican dependencias 
-particulares para ese proyecto. Para activar el entorno, simplemente navega a la carpeta y ejecuta:
-
-.. code-block:: bash
-
-    nix develop
-
-La primera vez tardará unos minutos descargando dependencias. Las siguientes veces será instantáneo.
-
-Integración con Tmux y Postgres
--------------------------------
-
-Para trabajar cómodamente con varios servicios como bases de datos, recomendamos usar **Tmux**.
-
-Flujo de Trabajo
-~~~~~~~~~~~~~~~~
-
-Para evitar cargar el entorno en cada ventana nueva, sigue este orden:
-
-1.  Abre tu terminal.
-2.  Ejecuta ``nix develop`` (Carga Python, Node, Postgres y Tmux).
-3.  Desde **dentro** de ese entorno, ejecuta ``tmux``.
-
-Ahora, cualquier ventana o panel que abras en Tmux heredará automáticamente el acceso a las herramientas.
-
-Persistencia de Base de Datos
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Nix es efímero, pero tus datos deben ser persistentes. Hemos configurado el entorno (archivo `flake.nix`) para que:
-
-1.  Los datos de PostgreSQL vivan en la carpeta ``.postgres_data`` dentro de tu proyecto.
-2.  El socket de conexión viva en ``/tmp`` (para evitar errores de permisos).
-
-Comandos útiles (Alias):
-************************
-
-* ``db-start``: Inicia el servidor de base de datos en segundo plano.
-* ``db-stop``: Detiene el servidor.
-* ``psql``: Entra a la consola SQL (ya configurado para conectarse al socket correcto).
-* ``serve``: Inicia un servidor web simple para el frontend.
-
-Ejemplo de ``flake.nix`` (Referencia)
--------------------------------------
-
-Este es el archivo de configuración que usamos en los proyectos del curso.
+2. Crea un archivo llamado ``flake.nix`` y pega el siguiente contenido:
 
 .. code-block:: nix
 
@@ -141,13 +61,16 @@ Este es el archivo de configuración que usamos en los proyectos del curso.
         {
           devShells.${system}.default = pkgs.mkShell {
             buildInputs = with pkgs; [
-              # Backend & Frontend
-              python311 python311Packages.django
-              nodejs_20 nodePackages.yarn
-              
+              # Backend & Frontend (Versiones actualizadas)
+              python312 
+              python312Packages.django
+              nodejs_20 
+              nodePackages.yarn
+
               # Infraestructura
-              postgresql_15 redis
-              
+              postgresql_15 
+              redis
+
               # Herramientas
               tmux neovim git curl
             ];
@@ -157,28 +80,116 @@ Este es el archivo de configuración que usamos en los proyectos del curso.
               export PGDATA="$PWD/.postgres_data"
               export PGHOST="/tmp" 
               
-              # Inicialización automática de BD
+              # Inicialización automática de BD si no existe
               if [ ! -d "$PGDATA" ]; then
                 initdb --auth=trust --no-locale --encoding=UTF8 > /dev/null
               fi
               
-              # Alias
+              # Alias de ayuda
               alias db-start="pg_ctl start -l $PGDATA/logfile -o '-k /tmp'"
               alias db-stop="pg_ctl stop"
+
+              echo "--- Entorno de ProgWeb activado ---"
+              echo "Python: $(python --version)"
+              echo "Comandos: db-start (iniciar DB), db-stop (parar DB)"
             '';
           };
         };
     }
 
-Tips Finales
-------------
+4. Entrar al Entorno
+--------------------
+
+Cada vez que quieras trabajar en el curso, entra a la carpeta y ejecuta:
+
+.. code-block:: bash
+
+    nix develop
+
+La primera vez, Nix descargará todas las herramientas (esto puede tardar unos minutos). Las siguientes veces será instantáneo.
+
+Tips:
+-----
 
 .. tip::
 
-   Si usas **Git**, asegúrate de ignorar la carpeta de datos. Agrega ``.postgres_data/`` y ``.npm-global/`` a tu archivo ``.gitignore``.
+   **Base de Datos:** Al entrar al entorno, usa el comando ``db-start`` para iniciar PostgreSQL. Los datos se guardarán en la carpeta local ``.postgres_data/``.
 
 .. warning::
 
-    Si reinicias tu computadora, el servidor de Postgres se detendrá. Solo
-    necesitas entrar a la carpeta, hacer ``nix develop`` y luego ``db-start``
-    para continuar donde te quedaste.
+   Si usas **Git**, asegúrate de ignorar los archivos temporales. Crea un archivo ``.gitignore`` y añade:
+   
+   * ``.postgres_data/``
+   * ``.direnv/`` (si decides usarlo después)
+
+.. note::
+
+   Si usas **Tmux**, te recomendamos iniciarlo **después** de haber ejecutado ``nix develop`` para que todas las ventanas hereden el entorno de desarrollo automáticamente.
+
+5. Personalización: Agregar más Software
+----------------------------------------
+
+Si necesitas herramientas adicionales, como ``pip`` para instalar librerías específicas o ``venv`` para crear entornos virtuales tradicionales dentro de Nix, sigue estos pasos:
+
+1. Abre tu archivo ``flake.nix``.
+2. Busca la sección ``buildInputs``.
+3. Añade los paquetes necesarios. Para Python 3.12, los paquetes se llaman ``python312Packages.pip`` y el módulo ``venv`` ya viene incluido en el paquete base de Python en Nix.
+
+Tu archivo debería verse así:
+
+.. code-block:: nix
+
+    buildInputs = with pkgs; [
+      # Backend con herramientas de gestión de paquetes
+      python312
+      python312Packages.django
+      python312Packages.pip  # <--- Agregamos PIP
+      
+      nodejs_20
+      # ... resto de paquetes
+    ];
+
+4. **Configuración para venv:** Nix es un sistema de archivos de "solo lectura". Para que ``pip`` y ``venv`` funcionen sin errores de permisos, añade estas líneas a tu ``shellHook``:
+
+.. code-block:: nix
+
+    shellHook = ''
+      # Crear un entorno virtual si no existe
+      if [ ! -d ".venv" ]; then
+        python -m venv .venv
+      fi
+      source .venv/bin/activate
+      
+      # ... resto de tu shellHook (Postgres, etc.)
+    '';
+
+5. Guarda el archivo y aplica los cambios:
+   Para que Nix reconozca los nuevos paquetes, simplemente sal de la terminal actual (o presiona ``Ctrl+D``) y vuelve a entrar con:
+
+   .. code-block:: bash
+
+      nix develop
+
+.. note::
+   
+   Al añadir el código de ``venv`` al ``shellHook``, cada vez que hagas ``nix develop``, tu entorno virtual se activará automáticamente y podrás usar ``pip install <paquete>`` de forma normal.
+
+5. Salir del Entorno
+--------------------
+
+Cuando hayas terminado de trabajar y quieras volver a tu terminal normal (fuera del entorno de desarrollo), tienes dos opciones:
+
+1. **Comando exit:** Escribe ``exit`` y presiona Enter.
+2. **Atajo de teclado:** Presiona ``Ctrl + D``.
+
+**¿Qué sucede al salir?**
+
+* Tus variables de entorno (como el acceso a ``pg_ctl`` o ``python3.12``) desaparecerán de la sesión actual.
+* Los servicios como Postgres o Redis **seguirán corriendo** en segundo plano a menos que los hayas detenido con ``db-stop``. 
+* Tu terminal volverá a mostrar su aspecto original (sin los dobles paréntesis).
+
+.. warning::
+
+   Si usaste **Tmux** dentro de Nix, primero debes cerrar todas tus ventanas de Tmux o salir de la sesión de Tmux antes de que el comando ``exit`` te devuelva a tu terminal base.
+
+
