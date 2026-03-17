@@ -128,7 +128,7 @@ El archivo ``.env`` se coloca en la raíz del proyecto:
 
     .. code-block:: bash
 
-    .env
+        .env
 
     - En producción, las variables de entorno suelen configurarse directamente en el sistema
     (por ejemplo, en Docker, AWS, o servidores Linux).
