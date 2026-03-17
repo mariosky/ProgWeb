@@ -79,6 +79,7 @@ computadora. Ver la sección :doc:`curso/herramientas` para conocer las alternat
    tutoriales/nix
    tutoriales/django_setup
    tutoriales/django_orm
+   tutoriales/django_env
    cheatsheets/index
 
 
