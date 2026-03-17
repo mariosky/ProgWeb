@@ -192,4 +192,32 @@ Cuando hayas terminado de trabajar y quieras volver a tu terminal normal (fuera 
 
    Si usaste **Tmux** dentro de Nix, primero debes cerrar todas tus ventanas de Tmux o salir de la sesión de Tmux antes de que el comando ``exit`` te devuelva a tu terminal base.
 
+6. Conexión a la Base de Datos
+-------------------------------
 
+Una vez que hayas iniciado la base de datos con el comando ``db-start``, puedes conectarte para ejecutar comandos SQL de la siguiente manera:
+
+**Comando directo:**
+
+.. code-block:: bash
+
+    psql -h /tmp postgres
+
+¿Por qué estos parámetros?
+
+* ``-h /tmp``: Le dice a psql que busque la conexión en la carpeta temporal donde la configuramos en el ``shellHook``.
+* ``postgres``: Es el nombre de la base de datos por defecto que crea ``initdb``.
+
+Para conectarte aún más fácil, puedes añadir este alias a la sección ``shellHook`` de tu ``flake.nix``:
+
+.. code-block:: bash
+
+    alias db-console="psql -h /tmp postgres"
+
+De este modo, solo tendrán que escribir ``db-console`` para entrar.
+
+Comandos básicos dentro de psql:
+
+* ``\l``: Listar bases de datos.
+* ``\dt``: Listar tablas.
+* ``\q``: Salir de la consola de la base de datos.
