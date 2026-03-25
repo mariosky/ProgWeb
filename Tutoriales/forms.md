@@ -1,8 +1,8 @@
 # Formularios en Django
 
 En el contexto del framework de Django, la clase `Form` es una representación
-de un formulario HTML, y nos permite crear y gestionar la información de dentro
-de los formularios HTML de manera programática. Los formularios de Django se
+de un formulario HTML, y nos permite crear y gestionar la información enviada 
+por los formularios HTML de manera programática. Los formularios de Django se
 especifican en una clase que hereda de `django.forms.Form`. Por ejemplo, vamos
 a definir un formulario para agregar comentarios:
 
