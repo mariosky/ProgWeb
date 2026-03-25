@@ -14,17 +14,17 @@ class CommentForm(forms.Form):
 ```
 
 De manera similar a los modelos de Django, `Form` también genera código HTML
-considerando los campos y las validaciones especificados en la clase. En este
+considerando los campos y las validaciones especificadas en la clase. En este
 caso, por cada campo que necesitamos en el formulario, vamos a definir un
 atributo en nuestra propia clase `CommentForm`. Cada campo es a su vez una
 clase que herda de `Field` la cual nos sirve para validar y gestionar los datos
-ingresados por el usuario. La documentación de Django provee una lista de los
+ingresados por el usuario. La documentación de Django provee una lista de los tipos de
 campos disponibles en el módulo `django.forms.fields` y sus respectivos
 atributos y métodos.
 
 [FormFields](docs.djangoproject.com/en/5.0/ref/forms/fields/).
 
-En nuestro ejemplo, el formurario tiene tres campos: el nombre del usuario, la
+En nuestro ejemplo, el formulario tiene tres campos: el nombre del usuario, la
 URL de su sitio web y un comentario. En el caso de la URL utilzamos la clase
 `URLField`, y especificamos en el constructor que el campo es opcional mediante
 el parámetro `required=False` y la etiqueta del campo se especifica con el
