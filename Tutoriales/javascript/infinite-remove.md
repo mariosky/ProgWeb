@@ -1,7 +1,7 @@
 ## Eliminar elementos
 
 Vamos a partir de la solución del ejercicio anterior y vamos a agregar la funcionalidad de remover las imágenes que no nos
-gusten (puede ser difícil la mayoría de los gatos son adorables).
+gusten (puede ser difícil, la mayoría de los gatos son adorables).
 
 Para esto, vamos a agregar un boton de `remove` a cada imagen que se agregue al elemento `#main-images`.
 Un elemento debería tener esta estructura:
