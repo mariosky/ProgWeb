@@ -1,4 +1,3 @@
-```rst
 Programación Asíncrona con asyncio
 ==================================
 
