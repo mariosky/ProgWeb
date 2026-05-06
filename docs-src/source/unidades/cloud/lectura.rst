@@ -1,5 +1,6 @@
 Cómputo en la nube y servicios
-------------------------------
+==============================
+
 1. Conceptos generales.
 2. Tipos de servicios en la nube.
 3. Patrones de diseño.
@@ -7,6 +8,8 @@ Cómputo en la nube y servicios
 5. Plataformas tecnológicas.
 6. Seguridad e interoperabilidad.
 
+Tutoriales
+------------------------------
 
 .. toctree::
    :maxdepth: 2
