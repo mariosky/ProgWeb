@@ -14,8 +14,7 @@ Tutoriales
 .. toctree::
    :maxdepth: 2
    :numbered: 2
-   :hidden:
-   :caption: Unidades:
+   :caption: Tutoriales:
     
    unidades/cloud/docker
    unidades/cloud/redis
