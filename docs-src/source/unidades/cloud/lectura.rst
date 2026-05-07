@@ -16,5 +16,5 @@ Tutoriales
    :numbered: 2
    :caption: Tutoriales:
     
-   unidades/cloud/docker
-   unidades/cloud/redis
+   docker
+   redis
